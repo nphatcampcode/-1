@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Component } from 'react';
 import firebase from 'firebase/app'
+import 'firebase/auth';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import LandingScreen from './components/auth/Landing'

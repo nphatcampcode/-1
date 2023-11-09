@@ -4,7 +4,11 @@ import {View, Button, TextInput} from 'react-native'
 import firebase from 'firebase/app'
 import 'firebase/auth';
 import { initializeApp } from 'firebase/app';
+require ('firebase/auth')
+import { getAuth } from "firebase/auth";
 
+
+const auth = getAuth();
 export class Register extends Component {
 constructor(props) {
     super(props);
