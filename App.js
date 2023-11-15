@@ -30,18 +30,21 @@ if (firebase.apps && firebase.apps.length === 0) {
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import LangdingScreen1 from './components/auth/Landing1'
 import LandingScreen from './components/auth/Landing'
 import RegisterScreen from './components/auth/Register'
 import MainScreen from './components/Main'
 import LoginScreen from './components/auth/Login'
+import LoginScreen1 from './components/auth/Login1'
+import AddScreen from './components/main/Add'
+import SaveScreen from './components/Save'
 
 const Stack = createStackNavigator();
 
 
 export class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       loaded: false,
     }
@@ -76,9 +79,9 @@ export class App extends Component {
       return (
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Landing">
-            <Stack.Screen name="Landing" component={LandingScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Landing" component={LangdingScreen1} options={{ headerShown: false }} />
             <Stack.Screen name="Register" component={RegisterScreen} />
-            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="Login" component={LoginScreen1} />
           </Stack.Navigator>
         </NavigationContainer>
       );
@@ -92,6 +95,8 @@ export class App extends Component {
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Main">
             <Stack.Screen name="MainScreen" component={MainScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Add" component={AddScreen} navigation={this.props.navigation}/>
+            <Stack.Screen name="Save" component={SaveScreen} navigation={this.props.navigation}/>
             </Stack.Navigator>
           </NavigationContainer>
       </Provider>
